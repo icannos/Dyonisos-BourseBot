@@ -1,6 +1,7 @@
 __author__ = 'Maxime'
 
 from loader import Loader
+import logging
 
 
 class App:
@@ -12,16 +13,16 @@ class App:
     on = 1
 
     def __init__(self):
-        print("================= Dyonisos ======================")
-        print("================= Initialisation ================")
+        logging.info("================= Dyonisos ======================")
+        logging.info("================= Initialisation ================")
         loader = Loader()
-        print("================= Chargement des parametres ================")
+        logging.info("================= Chargement des parametres ================")
         self.conf = loader.loadconfiguration()
 
-        print("================= Chargement des modules ================")
+        logging.info("================= Chargement des modules ================")
         self.modules = loader.loadmodules()
 
-        print("================= Instanciation des modules ================")
+        logging.info("================= Instanciation des modules ================")
 
         for m in self.modules:
             mod = getattr(m[2], m[1])
@@ -30,7 +31,7 @@ class App:
                 self.modulesinstances[m[0]] = {}
 
             self.modulesinstances[m[0]][m[1]] = mod(self.conf)
-            print(m[0] + '.' + m[1] + ' Init Ok')
+            logging.info(m[0] + '.' + m[1] + ' Init Ok')
 
     def stop(self):
         self.on = 0
@@ -64,7 +65,7 @@ class App:
                 instance.run()
 
     def run(self):
-        print("================= Lancement =====================")
+        logging.info("================= Lancement =====================")
         while self.on:
             self.run_infos()
 
@@ -72,4 +73,8 @@ class App:
 
             self.run_decision()
 
-        print "Arret"
+        logging.info("Arret")
+
+
+global Application
+Application = App()

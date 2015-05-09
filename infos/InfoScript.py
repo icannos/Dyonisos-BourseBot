@@ -1,19 +1,9 @@
 __author__ = 'Maxime'
 
+import logging
+from genericscript import GenericScript
 
-class InfoScript:
+class InfoScript(GenericScript):
 
     scriptname = 'Infoscript'
-
-
-    conf = []
-
-    def __init__(self, conf):
-        self.setconf(conf)
-
-    def setconf(self, conf):
-        self.conf = conf
-
-    def run(self):
-        self.conf = self.conf
-
+    version = '1'

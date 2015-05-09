@@ -1,24 +1,18 @@
 __author__ = 'Maxime'
 
-import threading
-from Commandes import Commandes
+import logging
 
 
-from appclass import App
+logging.basicConfig(filename='Data/dyonisos.log', format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', filemode='a', level=logging.DEBUG)
 
-Application = App()
-Com = Commandes()
+from appclass import *
+
+
+
 
 def main():
+    Application.run()
 
-    Com.setapp(Application)
-
-    ThreadProg = threading.Thread(None, Application.run, None)
-    ThreadCmd = threading.Thread(None, Com.cmdloop(), None)
-
-
-    ThreadProg.start()
-    #ThreadCmd.start()
 
 
 
