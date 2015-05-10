@@ -26,7 +26,7 @@
       <file leaf-file-name="Dyonisos.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dyonisos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="21" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+            <state line="7" column="22" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
               <folding />
             </state>
           </provider>
@@ -50,10 +50,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appclass.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="appclass.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appclass.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="23" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1445">
+            <state line="79" column="19" selection-start="2216" selection-end="2216" vertical-scroll-proportion="2.2724197" vertical-offset="0" max-vertical-offset="1445">
               <folding>
                 <element signature="e#23#48#0" expanded="true" />
               </folding>
@@ -73,10 +73,8 @@
       <file leaf-file-name="InfoScript.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/infos/InfoScript.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-              <folding>
-                <element signature="e#23#37#0" expanded="true" />
-              </folding>
+            <state line="9" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,13 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="loader.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="loader.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/loader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="50" selection-start="684" selection-end="684" vertical-scroll-proportion="0.22727273" vertical-offset="249" max-vertical-offset="799">
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
+            <state line="34" column="31" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="782">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -117,21 +113,21 @@
         <option value="$PROJECT_DIR$/decisions/essaie.py" />
         <option value="$PROJECT_DIR$/cmdui.py" />
         <option value="$PROJECT_DIR$/Commandes.py" />
-        <option value="$PROJECT_DIR$/appclass.py" />
         <option value="$PROJECT_DIR$/loader.py" />
         <option value="$PROJECT_DIR$/Data/dyonisos.log" />
         <option value="$PROJECT_DIR$/script.class.py" />
-        <option value="$PROJECT_DIR$/Dyonisos.py" />
         <option value="$PROJECT_DIR$/genericscript.py" />
         <option value="$PROJECT_DIR$/infos/InfoScript.py" />
+        <option value="$PROJECT_DIR$/Dyonisos.py" />
+        <option value="$PROJECT_DIR$/appclass.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -497,26 +493,26 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279396" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3279396" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24981412" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20537125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20446096" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3193096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3189911" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3284553" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -534,10 +530,75 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="0" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0" vertical-offset="210" max-vertical-offset="799">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dyonisos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="21" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/dyonisos.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appclass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="23" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="1445">
+          <folding>
+            <element signature="e#23#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infos/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="119">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infos/InfoScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/genericscript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="19" selection-start="45" selection-end="58" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="476">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="50" selection-start="684" selection-end="684" vertical-scroll-proportion="0.0" vertical-offset="266" max-vertical-offset="799">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Dyonisos.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="27" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="459">
@@ -564,18 +625,14 @@
     <entry file="file://$PROJECT_DIR$/infos/InfoScript.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="28" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="425">
-          <folding>
-            <element signature="e#23#37#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="765">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -605,18 +662,14 @@
     <entry file="file://$PROJECT_DIR$/infos/InfoScript.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="28" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="425">
-          <folding>
-            <element signature="e#23#37#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="765">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -646,18 +699,14 @@
     <entry file="file://$PROJECT_DIR$/infos/InfoScript.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="28" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="425">
-          <folding>
-            <element signature="e#23#37#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="765">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -687,18 +736,14 @@
     <entry file="file://$PROJECT_DIR$/infos/InfoScript.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="28" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="425">
-          <folding>
-            <element signature="e#23#37#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="765">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -728,18 +773,14 @@
     <entry file="file://$PROJECT_DIR$/infos/InfoScript.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="28" selection-start="176" selection-end="176" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="425">
-          <folding>
-            <element signature="e#23#37#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="0" selection-start="1001" selection-end="1001" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="765">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -769,18 +810,14 @@
     <entry file="file://$PROJECT_DIR$/infos/InfoScript.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="24" selection-start="227" selection-end="227" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="442">
-          <folding>
-            <element signature="e#23#37#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="18" column="63" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="765">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -837,6 +874,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/infos/InfoScript.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/loader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="31" selection-start="993" selection-end="993" vertical-scroll-proportion="0.0" vertical-offset="191" max-vertical-offset="782">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/genericscript.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="19" selection-start="45" selection-end="58" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
@@ -844,36 +895,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/infos/InfoScript.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="161" selection-end="161" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255">
-          <folding>
-            <element signature="e#23#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dyonisos.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="21" selection-start="252" selection-end="252" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
+        <state line="7" column="22" selection-start="214" selection-end="214" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/appclass.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="184" selection-end="184" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1445">
+        <state line="79" column="19" selection-start="2216" selection-end="2216" vertical-scroll-proportion="2.2724197" vertical-offset="0" max-vertical-offset="1445">
           <folding>
             <element signature="e#23#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/loader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="50" selection-start="684" selection-end="684" vertical-scroll-proportion="0.22727273" vertical-offset="249" max-vertical-offset="799">
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

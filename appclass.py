@@ -2,14 +2,14 @@ __author__ = 'Maxime'
 
 from loader import Loader
 import logging
-
+import time
 
 class App:
 
     data = []
-    conf = []
+    conf = {}
     modules = []
-    modulesinstances = {}
+    modulesInstances = {}
     on = 1
 
     def __init__(self):
@@ -27,10 +27,10 @@ class App:
         for m in self.modules:
             mod = getattr(m[2], m[1])
 
-            if not m[0] in self.modulesinstances.keys():
-                self.modulesinstances[m[0]] = {}
+            if not m[0] in self.modulesInstances.keys():
+                self.modulesInstances[m[0]] = {}
 
-            self.modulesinstances[m[0]][m[1]] = mod(self.conf)
+            self.modulesInstances[m[0]][m[1]] = mod(self.conf)
             logging.info(m[0] + '.' + m[1] + ' Init Ok')
 
     def stop(self):
@@ -39,28 +39,25 @@ class App:
     def run_infos(self):
         for m in self.modules:
             if m[0] == 'infos':
-                instance = self.modulesinstances['infos'][m[1]]
+                instance = self.modulesInstances['infos'][m[1]]
                 instance.setconf(self.conf)
                 instance.run()
 
     def run_decision(self):
         for m in self.modules:
             if m[0] == 'decision':
-                instance = self.modulesinstances['decision'][m[1]]
-                instance.setconf(self.conf)
-                instance.run()
-
-    def run_decision(self):
-        for m in self.modules:
-            if m[0] == 'decision':
-                instance = self.modulesinstances['decision'][m[1]]
+                instance = self.modulesInstances['decision'][m[1]]
                 instance.setconf(self.conf)
                 instance.run()
 
     def run_analyse(self):
+        """
+
+        :rtype : Void
+        """
         for m in self.modules:
             if m[0] == 'analyse':
-                instance = self.modulesinstances['analyse'][m[1]]
+                instance = self.modulesInstances['analyse'][m[1]]
                 instance.setconf(self.conf)
                 instance.run()
 
@@ -72,6 +69,9 @@ class App:
             self.run_analyse()
 
             self.run_decision()
+
+            # Valeur issue de la configuration "system_configuration" de la db
+            time.sleep(self.conf['system.sleeptime'])
 
         logging.info("Arret")
 
