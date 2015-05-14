@@ -1,5 +1,9 @@
 import sqlite3
 import logging
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 
 class Loader:
 
@@ -36,6 +40,20 @@ class Loader:
             logging.info( str(str(c[0]) + ": Charge."))
 
         return confok
+
+
+# Fonction utilisée normalement qu'au moment d'un reload ou à la 1ere utilisation pour charger la liste des entreprises côtées à Paris
+    def savefirms(self, firms):
+        listfirms = []
+        for l in firms:
+            listfirms.append((l['FirmName'], l['FirmISIN'], l['FirmCode']))
+
+        conn = self.connexion()
+
+        conn.executemany('INSERT INTO system_firms (name, isin, code) VALUES (?, ?, ?)', listfirms)
+        conn.commit()
+        conn.close()
+
 
 if __name__ == '__main__':
     l = Loader()

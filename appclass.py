@@ -1,8 +1,14 @@
 __author__ = 'Maxime'
 
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
+
 from loader import Loader
 import logging
 import time
+from Tools.scrapingfirms import getfirms
 
 class App:
 
@@ -14,6 +20,7 @@ class App:
 
     def __init__(self):
         logging.info("================= Dyonisos ======================")
+
         logging.info("================= Initialisation ================")
         loader = Loader()
         logging.info("================= Chargement des parametres ================")
@@ -71,9 +78,10 @@ class App:
             self.run_decision()
 
             # Valeur issue de la configuration "system_configuration" de la db
-            time.sleep(self.conf['system.sleeptime'])
+            time.sleep(float(self.conf['system.sleeptime']))
 
         logging.info("Arret")
+        return 0
 
 
 global Application
