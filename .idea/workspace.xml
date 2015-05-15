@@ -26,7 +26,7 @@
       <file leaf-file-name="Dyonisos.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Dyonisos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="85" max-vertical-offset="510">
+            <state line="5" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
               <folding />
             </state>
           </provider>
@@ -50,19 +50,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="appclass.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="appclass.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appclass.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="1899" selection-end="1899" vertical-scroll-proportion="0.0" vertical-offset="974" max-vertical-offset="1581">
+            <state line="69" column="0" selection-start="1899" selection-end="1899" vertical-scroll-proportion="0.5481728" vertical-offset="678" max-vertical-offset="1581">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scrapingfirms.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="scrapingfirms.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Tools/scrapingfirms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="16" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.8095238" vertical-offset="0" max-vertical-offset="903">
+            <state line="43" column="16" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
               <folding />
             </state>
           </provider>
@@ -888,20 +888,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dyonisos.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/appclass.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="1899" selection-end="1899" vertical-scroll-proportion="0.0" vertical-offset="974" max-vertical-offset="1581">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/loader.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="43" column="0" selection-start="1130" selection-end="1130" vertical-scroll-proportion="0.0" vertical-offset="498" max-vertical-offset="1105">
@@ -927,7 +913,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tools/scrapingfirms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="16" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.8095238" vertical-offset="0" max-vertical-offset="903">
+        <state line="43" column="16" selection-start="1056" selection-end="1056" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="833">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Dyonisos.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="31" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appclass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="0" selection-start="1899" selection-end="1899" vertical-scroll-proportion="0.5481728" vertical-offset="678" max-vertical-offset="1581">
           <folding />
         </state>
       </provider>
