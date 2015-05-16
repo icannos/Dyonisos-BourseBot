@@ -15,7 +15,7 @@ from appclass import *
 
 def main():
 
-    Application.run()
+    AutoApp.run()
     # Tout le code doit se trouver au dessus de cette fonction
 
 

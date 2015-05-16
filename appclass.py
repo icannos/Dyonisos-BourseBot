@@ -23,60 +23,67 @@ class App:
 
         logging.info("================= Initialisation ================")
         loader = Loader()
-        logging.info("================= Chargement des parametres ================")
+        logging.info("================= Loading settings ================")
         self.conf = loader.loadconfiguration()
 
-        logging.info("================= Chargement des modules ================")
+        logging.info("================= Loading modules ================")
         self.modules = loader.loadmodules()
 
-        logging.info("================= Instanciation des modules ================")
+        logging.info("================= Instantiation ================")
 
         for m in self.modules:
+            # Get the class object of the module
             mod = getattr(m[2], m[1])
 
+            # Declare dictionary in each cells of the list to make en 2*2 dictionary
             if not m[0] in self.modulesInstances.keys():
                 self.modulesInstances[m[0]] = {}
 
+            # Instantiation of the module with self.conf as init argmument
             self.modulesInstances[m[0]][m[1]] = mod(self.conf)
             logging.info(m[0] + '.' + m[1] + ' Init Ok')
 
     def stop(self):
         self.on = 0
 
-    def run_infos(self):
+    def run_gatherer(self):
+        """
+        Launch the pick up tool of the application, to get some data from the web
+        """
         for m in self.modules:
-            if m[0] == 'infos':
+            if m[0] == 'gatherer':
                 instance = self.modulesInstances['infos'][m[1]]
+                #Reset Conf in doubt of a change
                 instance.setconf(self.conf)
-                instance.run()
+                try:
+                    instance.run()
+                    yield (instance.answer)
+                except SystemError as error:
+                    logging.warning(error[0])
 
-    def run_decision(self):
+    def run_mathsanalysis(self):
+        """
+        Launch the matehmatical analysis on the data which are already saved on our database
+        """
         for m in self.modules:
-            if m[0] == 'decision':
+            if m[0] == 'mathsanalysis':
                 instance = self.modulesInstances['decision'][m[1]]
+                #Reset Conf in doubt of a change
                 instance.setconf(self.conf)
-                instance.run()
+                try:
+                    instance.run()
+                    yield (instance.answer)
+                except SystemError as error:
+                    logging.warning(error[0])
 
-    def run_analyse(self):
-        """
-
-        :rtype : Void
-        """
-        for m in self.modules:
-            if m[0] == 'analyse':
-                instance = self.modulesInstances['analyse'][m[1]]
-                instance.setconf(self.conf)
-                instance.run()
 
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
-            self.run_infos()
 
-            self.run_analyse()
+            self.run_gatherer()
 
-            self.run_decision()
-
+            self.run_mathsanalysis()
             # Valeur issue de la configuration "system_configuration" de la db
             time.sleep(float(self.conf['system.sleeptime']))
 
@@ -84,5 +91,5 @@ class App:
         return 0
 
 
-global Application
-Application = App()
+global AutoApp
+AutoApp = App()

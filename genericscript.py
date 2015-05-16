@@ -10,6 +10,7 @@ class GenericScript:
     scriptname = 'genericscript'
     version = '1'
 
+    answer = []
 
     conf = []
 
@@ -20,7 +21,7 @@ class GenericScript:
         self.conf = conf
 
     def run(self):
-        self.conf = self.conf
+        raise SystemError('You have to overwrite run()')
 
-    def LogExec(self):
+    def logexec(self):
         logging.info(self.scriptname + ' run.')

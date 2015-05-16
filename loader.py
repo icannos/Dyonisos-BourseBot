@@ -13,8 +13,8 @@ class Loader:
     def loadmodules(self):
         conn = self.connexion()
 
-        # name = 0, active = 1, fonction = 2
-        modules = conn.execute('SELECT name, active, fonction FROM system_modules WHERE active=1 ').fetchall()
+        # name = 0, active = 1, block = 2
+        modules = conn.execute('SELECT name, active, block FROM system_modules WHERE active=1 ').fetchall()
 
         modulesok = []
 
