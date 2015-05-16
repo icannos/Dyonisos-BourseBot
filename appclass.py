@@ -24,10 +24,10 @@ class App:
         logging.info("================= Initialisation ================")
         loader = Loader()
         logging.info("================= Loading settings ================")
-        self.conf = loader.loadconfiguration()
+        self.conf = loader.load_configuration()
 
         logging.info("================= Loading modules ================")
-        self.modules = loader.loadmodules()
+        self.modules = loader.load_modules()
 
         logging.info("================= Instantiation ================")
 
@@ -39,7 +39,7 @@ class App:
             if not m[0] in self.modulesInstances.keys():
                 self.modulesInstances[m[0]] = {}
 
-            # Instantiation of the module with self.conf as init argmument
+            # Instantiation of the module with self.conf as init argument
             self.modulesInstances[m[0]][m[1]] = mod(self.conf)
             logging.info(m[0] + '.' + m[1] + ' Init Ok')
 

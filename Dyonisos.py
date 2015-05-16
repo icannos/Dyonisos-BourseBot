@@ -16,7 +16,7 @@ from appclass import *
 def main():
 
     AutoApp.run()
-    # Tout le code doit se trouver au dessus de cette fonction
+    # Everything has to be UPON this function
 
 
 
