@@ -84,7 +84,7 @@ class App:
             self.run_gatherer()
 
             self.run_mathsanalysis()
-            # Valeur issue de la configuration "system_configuration" de la db
+            # Value found in the "system_configuration" table
             time.sleep(float(self.conf['system.sleeptime']))
 
         logging.info("Arret")
