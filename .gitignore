@@ -46,6 +46,8 @@ Temporary Items
 
 #Ignore Pycharm files
 /.idea/*
+.idea/*
+.idea
 
 #Ignore precompiled python file
 *.pyc
