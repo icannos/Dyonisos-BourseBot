@@ -1,20 +1,20 @@
-import sqlite3
+
 import logging
 import sys
+import Tools.DataMapper as DM
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
 
 class Loader:
 
-    def connexion(self):
-        return sqlite3.connect('data/database.db')
+    DataM = DM.DataMapper(database_name='database.db', database_path='data')
 
-    def loadmodules(self):
-        conn = self.connexion()
+    def load_modules(self):
 
         # name = 0, active = 1, block = 2
-        modules = conn.execute('SELECT name, active, block FROM system_modules WHERE active=1 ').fetchall()
+        self.DataM.execute('SELECT name, active, block FROM system_modules WHERE active=1')
+        modules = self.DataM.fetchall()
 
         modulesok = []
 
@@ -29,10 +29,10 @@ class Loader:
         return modulesok
 
 
-    def loadconfiguration(self):
+    def load_configuration(self):
         #name = 0, value = 1
-        conn = self.connexion()
-        conf = conn.execute('SELECT name, value FROM system_configuration').fetchall()
+        self.DataM.execute('SELECT name, value FROM system_configuration')
+        conf = self.DataM.fetchall()
         confok = {}
 
         for c in conf:
@@ -42,19 +42,16 @@ class Loader:
         return confok
 
 
-# Fonction utilisée normalement qu'au moment d'un reload ou à la 1ere utilisation pour charger la liste des entreprises côtées à Paris
-    def savefirms(self, firms):
+#function called only when reloading: builds the table of the firms cotted at Paris trade agency
+    def save_firms(self, firms):
         listfirms = []
         for l in firms:
             listfirms.append((l['FirmName'], l['FirmISIN'], l['FirmCode']))
 
-        conn = self.connexion()
-
-        conn.executemany('INSERT INTO system_firms (name, isin, code) VALUES (?, ?, ?)', listfirms)
-        conn.commit()
-        conn.close()
+        self.DataM.executemany('INSERT INTO system_firms (name, isin, code) VALUES (?, ?, ?)', listfirms)
+        self.DataM.commit_n_close()
 
 
 if __name__ == '__main__':
     l = Loader()
-    l.loadmodules()
+    l.load_modules()

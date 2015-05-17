@@ -7,7 +7,7 @@ sys.setdefaultencoding("utf-8")
 
 class GenericScript:
 
-    scriptname = 'genericscript'
+    script_name = 'genericscript'
     version = '1'
 
     answer = []
@@ -24,4 +24,4 @@ class GenericScript:
         raise SystemError('You have to overwrite run()')
 
     def logexec(self):
-        logging.info(self.scriptname + ' run.')
+        logging.info(self.script_name + ' run.')
