@@ -57,7 +57,7 @@ class App:
         Launch the pick up tool of the application, to get some data from the web
         """
         for m in self.modules:
-            if m[0] == 'gatherer':
+            if m[0] == 'Gatherer':
                 instance = self.modulesInstances['Gatherer'][m[1]]
                 #Reset Conf in doubt of a change
                 instance.setconf(self.conf)
@@ -67,13 +67,13 @@ class App:
                 except SystemError as error:
                     logging.warning(error[0])
 
-    def run_mathsanalysis(self):
+    def run_maths_analysis(self):
         """
         Launch the mathematical analysis on the data which are already saved on our database
         """
         for m in self.modules:
-            if m[0] == 'mathsanalysis':
-                instance = self.modulesInstances['decision'][m[1]]
+            if m[0] == 'Maths_analysis':
+                instance = self.modulesInstances['Maths_analysis'][m[1]]
                 #Reset Conf in doubt of a change
                 instance.setconf(self.conf)
                 try:
@@ -91,8 +91,12 @@ class App:
         while self.on:
             gath_gene = self.run_gatherer()
             math_gene = self.run_mathsanalysis()
+
             self.run_marks_maker(gath_gene)
             self.run_marks_maker(math_gene)
+
+            # Futur place of Module Markupdate
+
             # Value found in the "system_configuration" table
             time.sleep(float(self.conf['system.sleeptime']))
 

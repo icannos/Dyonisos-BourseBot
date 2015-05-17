@@ -9,7 +9,7 @@ sys.setdefaultencoding("utf-8")
 
 class GenericScript:
 
-    script_name = 'genericscript'
+    script_name = None
     version = '1'
 
     answer = []
@@ -17,6 +17,7 @@ class GenericScript:
     conf = []
 
     def __init__(self, conf):
+        self.script_name = self.__class__.__name__
         self.setconf(conf)
 
     def setconf(self, conf):
@@ -27,3 +28,4 @@ class GenericScript:
 
     def logexec(self):
         logging.info(self.script_name + ' run.')
+
