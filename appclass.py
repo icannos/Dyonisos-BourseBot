@@ -10,17 +10,8 @@ import logging
 import time
 import Tools.DataMapper as DM
 import Mark_maker
-<<<<<<< HEAD
+
 from Google_parse import Google_parse
-=======
-<<<<<<< HEAD
-=======
-from Google_parse import Google_parse as GParse
->>>>>>> origin/master
-
-
-
->>>>>>> origin/master
 
 class App:
 
