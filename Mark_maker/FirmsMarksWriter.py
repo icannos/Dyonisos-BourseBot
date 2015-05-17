@@ -2,11 +2,11 @@ __author__ = 'ValadeAurelien'
 
 
 import appclass
+AutoApp = appclass.AutoApp
 import time
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
-
 
 
 class SingleModule():
@@ -31,13 +31,13 @@ class SingleModule():
         """
         Fetches the marks of the considered module in system_modules_marks.database.db .
         """
-        self.module_mark = appclass.AutoApp.DataM.get_all('SELECT (markS,markM,markL) FROM system_modules_marks WHERE name = ' + self.module_name)
+        self.module_mark = AutoApp.DataM.get_all('SELECT (markS,markM,markL) FROM system_modules_marks WHERE name = ' + self.module_name)
 
     def fetch_firm_infos(self, firm_name):
         """
         Fetches the datas of the considered firm in system_firms_marks.database.db .
         """
-        return appclass.AutoApp.DataM.get_all('SELECT * FROM system_firms_marks WHERE name = ' + firm_name + ' ORDER BY id DESC LIMIT 1')
+        return AutoApp.DataM.get_all('SELECT * FROM system_firms_marks WHERE name = ' + firm_name + ' ORDER BY id DESC LIMIT 1')
 
     def update_firm_info(self, advice):
         """
@@ -71,7 +71,7 @@ class SingleModule():
         """
         An executemany() executes all the advices of an answer (ie a module answer).
         """
-        appclass.AutoApp.DataM.executemany('INCLUDE INTO sys_firms_marks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', self.gene_module_advices())
+        AutoApp.DataM.executemany('INCLUDE INTO sys_firms_marks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', self.gene_module_advices())
 
 
 class FirmsMarksWriter():
@@ -85,7 +85,7 @@ class FirmsMarksWriter():
         """
         self.g_modules_packages = g_modules_packages
         self.execute_answers()
-        appclass.AutoApp.DataM.commit()
+        AutoApp.DataM.commit()
 
     def execute_answers(self):
         """

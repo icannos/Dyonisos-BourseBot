@@ -92,7 +92,7 @@ class App:
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
-            self.google.save_firms_data(self.firms)
+            #self.google.save_firms_data(self.firms)
 
             gath_gene = self.run_gatherer()
             math_gene = self.run_maths_analysis()
@@ -101,7 +101,7 @@ class App:
             # Future place of Module MarkUpdate
 
             # Value found in the "system_configuration" table
-            time.sleep(10) #float(self.conf['system.sleeptime'])
+            time.sleep(float(self.conf['system.sleeptime']))
 
         logging.info("Arret")
         return 0
