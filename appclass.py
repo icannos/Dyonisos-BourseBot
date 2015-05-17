@@ -9,8 +9,7 @@ from loader import Loader
 import logging
 import time
 import Tools.DataMapper as DM
-from Mark_maker import *
-
+import Mark_maker
 
 class App:
 
@@ -89,15 +88,15 @@ class App:
                     logging.warning(error[0])
 
     def run_firms_marks_maker(self, g_modules_packages):
-
+        Mark_maker.Firms_marks_writer(g_modules_packages)
 
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
             gath_gene = self.run_gatherer()
             math_gene = self.run_maths_analysis()
-
-
+            self.run_firms_marks_maker(gath_gene)
+            self.run_firms_marks_maker(math_gene)
             # Futur place of Module Markupdate
 
             # Value found in the "system_configuration" table
