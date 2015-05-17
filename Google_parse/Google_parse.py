@@ -16,9 +16,13 @@ class Google_Parse():
     def __init__(self):
         pass
 
-    def get_stock_quote(self, ticker_symbol):
+    def get_stock_quote(self, code):
         url = self.api_url + ticker_symbol
         lines = urllib2.urlopen(url).read().splitlines()
-        self.data[ticker_symbol] = json.loads(''.join([x for x in lines if x not in ('// [', ']')]))
-        return self.data
+        self.data[code] = json.loads(''.join([x for x in lines if x not in ('// [', ']')]))
+        return self.data[code]
+
+    def get_multi_stock_quote(self, firms):
+        for f in firms:
+            self.get_stock_quote(f[2])
 
