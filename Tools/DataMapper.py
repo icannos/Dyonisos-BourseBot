@@ -35,10 +35,17 @@ class DataMapper():
         """Void: commits."""
         self.connection.commit()
 
-    def execute(self, order):
-        """Void: executes a single order."""
+    def execute(self, order, params={}):
+        """
+
+        :param order: SQL string with the request to execute
+        :param params: Parameters wich are in the SQL String noted ":param", Parameters is a dictonary
+        with the relation between parameters and notation in the string: :name / {'name': var}
+        Void: executes a single order.
+
+        """
         try:
-            self.cursor.execute(order)
+            self.cursor.execute(order, params)
         except sq.Error as error:
             raise SystemError('SQLite error: ' + error[0])
 
