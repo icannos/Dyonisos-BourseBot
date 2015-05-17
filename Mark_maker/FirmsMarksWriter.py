@@ -1,8 +1,7 @@
 __author__ = 'ValadeAurelien'
 
 
-import appclass
-AutoApp = appclass.AutoApp
+import GlobalFile
 import time
 import sys
 reload(sys)
@@ -16,12 +15,14 @@ class SingleModule():
      """
     module_name, answer = None, None
     module_mark = None
+    DataM = None
 
     def __init__(self, package):
         """
         Writes in the database, as soon as defined.
         Package = (module_name, module_answer) .
         """
+        self.DataM = GlobalFile.get_DataMapper()
         self.module_name = package[0]
         self.answer = package[1]
         self.fetch_module_mark()
@@ -31,13 +32,13 @@ class SingleModule():
         """
         Fetches the marks of the considered module in system_modules_marks.database.db .
         """
-        self.module_mark = AutoApp.DataM.get_all('SELECT (markS,markM,markL) FROM system_modules_marks WHERE name = ' + self.module_name)
+        self.module_mark = self.DataM.get_all('SELECT (markS,markM,markL) FROM system_modules_marks WHERE name = ' + self.module_name)
 
     def fetch_firm_infos(self, firm_name):
         """
         Fetches the datas of the considered firm in system_firms_marks.database.db .
         """
-        return AutoApp.DataM.get_all('SELECT * FROM system_firms_marks WHERE name = ' + firm_name + ' ORDER BY id DESC LIMIT 1')
+        return self.DataM.get_all('SELECT * FROM system_firms_marks WHERE name = ' + firm_name + ' ORDER BY id DESC LIMIT 1')
 
     def update_firm_info(self, advice):
         """
@@ -71,7 +72,7 @@ class SingleModule():
         """
         An executemany() executes all the advices of an answer (ie a module answer).
         """
-        AutoApp.DataM.executemany('INCLUDE INTO sys_firms_marks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', self.gene_module_advices())
+        self.DataM.executemany('INCLUDE INTO sys_firms_marks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)', self.gene_module_advices())
 
 
 class FirmsMarksWriter():
@@ -83,9 +84,10 @@ class FirmsMarksWriter():
         Updates the database by creating new lines based on the modules answers and their marks stored in the DB.
         The changes are committed.
         """
+        self.DataM = GlobalFile.get_DataMapper()
         self.g_modules_packages = g_modules_packages
         self.execute_answers()
-        AutoApp.DataM.commit()
+        self.DataM.commit()
 
     def execute_answers(self):
         """

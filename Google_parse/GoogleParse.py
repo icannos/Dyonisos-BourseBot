@@ -1,7 +1,7 @@
 __author__ = 'Atelier'
 #__all__ = ['GoogleParse']
 
-import appclass
+import GlobalFile
 import json
 import time
 import urllib2
@@ -18,10 +18,10 @@ class GoogleParse():
 
     api_url = 'http://finance.google.com/finance/info?client=ig&q=EPA:'
     data = {}
-
+    DataM = None
 
     def __init__(self):
-        pass
+        self.DataM = GlobalFile.get_DataMapper()
 
     def get_stock_quote(self, firm):
         url = self.api_url + firm[2]
@@ -43,9 +43,9 @@ class GoogleParse():
     def write_in_db(self, firm_data):
         print firm_data
         params = {'isin': firm_data[0], 'quotation':firm_data[1]['l'], 'time': time.time()}
-        appclass.AutoApp.DataM.execute('INSERT INTO system_firms_quotation (isin, quotation, date) '
+        self.DataM.execute('INSERT INTO system_firms_quotation (isin, quotation, date) '
                               'VALUES (:isin, :quotation, :time)', params)
-        appclass.AutoApp.DataM.commit()
+        self.DataM.commit()
 
     def write_multi_in_db(self, firms_data):
         for firm_data in firms_data:

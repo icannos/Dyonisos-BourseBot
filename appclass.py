@@ -1,10 +1,9 @@
 __author__ = 'Maxime'
 
+import GlobalFile
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
-
-
 from Tools.loader import Loader
 import time
 import Tools.DataMapper as DataM
@@ -13,7 +12,7 @@ import Mark_Maker.FirmsMarksWriter as MmF
 import logging
 
 
-class App:
+class App():
 
     data = []
     conf = {}
@@ -27,9 +26,11 @@ class App:
     DataM = None
 
     def __init__(self):
+        GlobalFile.init_Logging()
         logging.info("================= Dyonisos ======================")
         logging.info("================= DataMapper ======================")
-        self.DataM = DataM.DataMapper(database_name='database.db', database_path='data')
+        GlobalFile.init_DataMapper()
+        self.DataM = GlobalFile.get_DataMapper()
         logging.info("================= Initialisation ================")
         loader = Loader(self.DataM)
         logging.info("================= Loading settings ================")
@@ -92,7 +93,7 @@ class App:
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
-            #self.google.save_firms_data(self.firms)
+            self.google.save_firms_data(self.firms)
 
             gath_gene = self.run_gatherer()
             math_gene = self.run_maths_analysis()
@@ -101,11 +102,6 @@ class App:
             # Future place of Module MarkUpdate
 
             # Value found in the "system_configuration" table
-            time.sleep(float(self.conf['system.sleeptime']))
-
+            time.sleep(1) #float(self.conf['system.sleeptime']))
         logging.info("Arret")
         return 0
-
-
-global AutoApp
-AutoApp = App()

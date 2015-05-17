@@ -84,9 +84,23 @@ def ge_smooth_mov_avg(dates, values, nb_points):
         yield moy_date/nb_points, moy_val/nb_points
     raise StopIteration
 
+
 def last_upon(dates, values, to_exceed):
     """
-    Tuple: returns the last couple (date, value) of the last point of the given list whom value exceeded the given one.
+    Tuple: returns the last couple (date, value) of the last point of the given list whom value exceeded or is equal to the given one.
+    None is returned if no point fits.
     """
+    for i in xrange(len(values)):
+        if values[i] >= to_exceed:
+            return dates[i], values[i]
 
+
+def last_under(dates, values, to_exceed):
+    """
+    Tuple: returns the last couple (date, value) of the last point of the given list whom value is lower than or equal to the given one.
+    None is returned if no point fits.
+    """
+    for i in xrange(len(values)):
+        if values[i] <= to_exceed:
+            return dates[i], values[i]
 
