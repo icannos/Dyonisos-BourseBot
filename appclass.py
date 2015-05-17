@@ -10,7 +10,9 @@ import logging
 import time
 import Tools.DataMapper as DM
 import Mark_maker
-from Mark_maker import *
+from Google_parse import Google_parse as GParse
+
+
 
 
 class App:
