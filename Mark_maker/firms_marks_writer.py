@@ -15,7 +15,7 @@ class Firm_mark_writer():
         self.answer = answer
 
     def module_mark(self):
-        
+        pass
 
 
 
