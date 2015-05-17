@@ -94,6 +94,11 @@ class DataMapper():
         except:
             raise AttributeError('No header available')
 
+    def get_all(self, order):
+        """List of tuples: returns the fetched object of a selection."""
+        self.execute(order)
+        return self.fetchall()
+
     def open_database_dir(self):
         """Void: opens the database folder."""
         os.startfile(self.database_path)

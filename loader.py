@@ -16,8 +16,7 @@ class Loader:
     def load_modules(self):
 
         # name = 0, active = 1, block = 2
-        self.datam.execute('SELECT name, active, block FROM system_modules WHERE active=1')
-        modules = self.datam.fetchall()
+        modules = self.datam.get_all('SELECT name, active, block FROM system_modules WHERE active=1')
 
         modulesok = []
 
@@ -34,8 +33,7 @@ class Loader:
 
     def load_configuration(self):
         #name = 0, value = 1
-        self.datam.execute('SELECT name, value FROM system_configuration')
-        conf = self.datam.fetchall()
+        conf = self.datam.get_all('SELECT name, active, block FROM system_modules WHERE active=1')
         confok = {}
 
         for c in conf:

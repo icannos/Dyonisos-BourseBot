@@ -6,5 +6,22 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 from appclass import AutoApp
 
-class Mark_maker():
+
+class Firm_mark_writer():
+
+    answer = None
+
+    def __init__(self, answer):
+        self.answer = answer
+
+    def module_mark(self):
+        
+
+
+
+class Firms_marks_writer(Firm_mark_writer):
+
+    def __init__(self):
+        pass
+
 

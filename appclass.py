@@ -9,7 +9,7 @@ from loader import Loader
 import logging
 import time
 import Tools.DataMapper as DM
-import Mark_maker
+from Mark_maker import *
 
 class App:
 
@@ -87,15 +87,15 @@ class App:
                 except SystemError as error:
                     logging.warning(error[0])
 
-    def run_marks_maker(self, generator):
+    def run_firms_marks_maker(self, generator):
         for answer in generator:
-                Mark_maker.Mark_maker(answer)
+                Firms_marks_writer(answer)
 
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
             gath_gene = self.run_gatherer()
-            math_gene = self.run_mathsanalysis()
+            math_gene = self.run_math_sanalysis()
 
             self.run_marks_maker(gath_gene)
             self.run_marks_maker(math_gene)
