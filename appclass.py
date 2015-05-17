@@ -8,7 +8,7 @@ sys.setdefaultencoding("utf-8")
 from loader import Loader
 import logging
 import time
-from Tools.scrapingfirms import getfirms
+import Tools.DataMapper as DM
 
 class App:
 
@@ -18,11 +18,16 @@ class App:
     modulesInstances = {}
     on = 1
 
+    DataM = None
+
     def __init__(self):
         logging.info("================= Dyonisos ======================")
 
+        logging.info("================= DataMapper ======================")
+        self.DataM = DM.DataMapper(database_name='database.db', database_path='data')
+
         logging.info("================= Initialisation ================")
-        loader = Loader()
+        loader = Loader(self.DataM)
         logging.info("================= Loading settings ================")
         self.conf = loader.load_configuration()
 
