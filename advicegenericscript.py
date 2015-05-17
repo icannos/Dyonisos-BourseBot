@@ -18,20 +18,20 @@ class AdviceGenericScript:
 
     def __init__(self, conf):
         self.script_name = self.__class__.__name__
-        self.setconf(conf)
+        self.set_conf(conf)
 
-    def setconf(self, conf):
+    def set_conf(self, conf):
         self.conf = conf
 
-    def advicegenerator(self, f):
+    def advice_generator(self, firm):
         raise SystemError('You have to overwrite run()')
 
-    def built_answergenerator(self, firms):
+    def build_answer_generator(self, firms):
         for f in firms:
-            yield(self.advicegenerator(f))
+            yield(self.advice_generator(f))
 
     def run(self, firms):
-        self.answer = self.built_answergenerator(firms)
+        self.answer = self.build_answer_generator(firms)
         return self
 
     def logexec(self):

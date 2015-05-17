@@ -11,6 +11,7 @@ import time
 import Tools.DataMapper as DM
 from Mark_maker import *
 
+
 class App:
 
     data = []
@@ -87,18 +88,15 @@ class App:
                 except SystemError as error:
                     logging.warning(error[0])
 
-    def run_firms_marks_maker(self, generator):
-        for answer in generator:
-                Firms_marks_writer(answer)
+    def run_firms_marks_maker(self, g_modules_packages):
+
 
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
             gath_gene = self.run_gatherer()
-            math_gene = self.run_math_sanalysis()
+            math_gene = self.run_maths_analysis()
 
-            self.run_marks_maker(gath_gene)
-            self.run_marks_maker(math_gene)
 
             # Futur place of Module Markupdate
 
