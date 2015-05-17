@@ -2,7 +2,9 @@ __author__ = 'ValadeAurelien'
 
 import os
 import sqlite3 as sq
-
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
 
 class DataMapper():
     """Short DataMapper with some functions.

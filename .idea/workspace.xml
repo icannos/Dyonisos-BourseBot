@@ -44,7 +44,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="0" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="986">
+            <state line="11" column="0" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1020">
               <folding />
             </state>
           </provider>
@@ -62,7 +62,7 @@
       <file leaf-file-name="DataMapper.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Tools/DataMapper.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="64" selection-start="2664" selection-end="2664" vertical-scroll-proportion="0.31486145" vertical-offset="957" max-vertical-offset="1751">
+            <state line="75" column="64" selection-start="2783" selection-end="2783" vertical-scroll-proportion="0.33627203" vertical-offset="974" max-vertical-offset="1768">
               <folding />
             </state>
           </provider>
@@ -139,10 +139,10 @@
         <option value="$PROJECT_DIR$/Tools/scrapingfirms.py" />
         <option value="$PROJECT_DIR$/Dyonisos.py" />
         <option value="$PROJECT_DIR$/genericscript.py" />
-        <option value="$PROJECT_DIR$/Tools/DataMapper.py" />
         <option value="$PROJECT_DIR$/appclass.py" />
         <option value="$PROJECT_DIR$/loader.py" />
         <option value="$PROJECT_DIR$/infos/InfoScript.py" />
+        <option value="$PROJECT_DIR$/Tools/DataMapper.py" />
       </list>
     </option>
   </component>
@@ -530,7 +530,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -895,7 +895,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="986">
+        <state line="11" column="0" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
@@ -955,7 +955,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Tools/DataMapper.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="64" selection-start="2664" selection-end="2664" vertical-scroll-proportion="0.31486145" vertical-offset="957" max-vertical-offset="1751">
+        <state line="75" column="64" selection-start="2783" selection-end="2783" vertical-scroll-proportion="0.33627203" vertical-offset="991" max-vertical-offset="1785">
           <folding />
         </state>
       </provider>
