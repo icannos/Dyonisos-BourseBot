@@ -44,6 +44,13 @@ class Loader:
 
         return confok
 
+    def load_firms(self):
+        #List of tuple with name = 0, isin=1, code=2
+        self.datam.execute('SELECT name, isin, code FROM system_firms')
+        return self.datam.fetchall()
+
+
+
 
 #function called only when reloading: builds the table of the firms cotted at Paris trade agency
     def save_firms(self, firms):

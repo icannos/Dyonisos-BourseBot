@@ -1,10 +1,10 @@
 __author__ = 'Maxime'
 
 import logging
-from genericscript import GenericScript
+from advicegenericscript import AdviceGenericScript
 from appclass import AutoApp
 
-class InfoScript(GenericScript):
+class InfoScript(AdviceGenericScript):
 
     scriptname = 'Infoscript'
     version = '1'

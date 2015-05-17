@@ -15,6 +15,8 @@ class App:
 
     data = []
     conf = {}
+    firms = []
+
     modules = []
     modulesInstances = {}
     on = 1
@@ -31,6 +33,9 @@ class App:
         loader = Loader(self.DataM)
         logging.info("================= Loading settings ================")
         self.conf = loader.load_configuration()
+
+        logging.info("================= Loading Firms ================")
+        self.firms = loader.load_firms()
 
         logging.info("================= Loading modules ================")
         self.modules = loader.load_modules()
@@ -63,7 +68,7 @@ class App:
                 instance.setconf(self.conf)
                 try:
                     instance.run()
-                    yield (instance.answer)
+                    yield (instance)
                 except SystemError as error:
                     logging.warning(error[0])
 
@@ -78,7 +83,7 @@ class App:
                 instance.setconf(self.conf)
                 try:
                     instance.run()
-                    yield (instance.answer)
+                    yield (instance)
                 except SystemError as error:
                     logging.warning(error[0])
 
