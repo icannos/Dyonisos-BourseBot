@@ -3,3 +3,7 @@
 .idea/*.xml
 *.pyc
 
+.idea\\
+.idea\\*
+.idea\\*.xml
+*.pyc
