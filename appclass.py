@@ -10,7 +10,7 @@ import logging
 import time
 import Tools.DataMapper as DM
 import Mark_maker
-from Google_parse import Google_parse as GParse
+from Google_parse import Google_parse
 
 
 
@@ -97,6 +97,8 @@ class App:
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
+            Google_parse.save_firms_data(self.firms)
+
             gath_gene = self.run_gatherer()
             math_gene = self.run_maths_analysis()
 
