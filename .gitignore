@@ -49,6 +49,7 @@ Temporary Items
 .idea/*
 .idea
 **/.idea
+.idea/workspace.xml
 
 #Ignore precompiled python file
 *.pyc
