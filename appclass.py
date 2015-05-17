@@ -10,10 +10,17 @@ import logging
 import time
 import Tools.DataMapper as DM
 import Mark_maker
+<<<<<<< HEAD
 from Google_parse import Google_parse
+=======
+<<<<<<< HEAD
+=======
+from Google_parse import Google_parse as GParse
+>>>>>>> origin/master
 
 
 
+>>>>>>> origin/master
 
 class App:
 
@@ -92,7 +99,7 @@ class App:
                     logging.warning(error[0])
 
     def run_firms_marks_maker(self, g_modules_packages):
-
+        Mark_maker.Firms_marks_writer(g_modules_packages)
 
     def run(self):
         logging.info("================= Lancement =====================")
@@ -101,8 +108,8 @@ class App:
 
             gath_gene = self.run_gatherer()
             math_gene = self.run_maths_analysis()
-
-
+            self.run_firms_marks_maker(gath_gene)
+            self.run_firms_marks_maker(math_gene)
             # Futur place of Module Markupdate
 
             # Value found in the "system_configuration" table
