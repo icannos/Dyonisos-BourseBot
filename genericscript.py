@@ -5,6 +5,8 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
+
+
 class GenericScript:
 
     script_name = 'genericscript'

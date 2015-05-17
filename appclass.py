@@ -9,6 +9,7 @@ from loader import Loader
 import logging
 import time
 import Tools.DataMapper as DM
+import Mark_maker
 
 class App:
 
@@ -57,7 +58,7 @@ class App:
         """
         for m in self.modules:
             if m[0] == 'gatherer':
-                instance = self.modulesInstances['infos'][m[1]]
+                instance = self.modulesInstances['Gatherer'][m[1]]
                 #Reset Conf in doubt of a change
                 instance.setconf(self.conf)
                 try:
@@ -68,7 +69,7 @@ class App:
 
     def run_mathsanalysis(self):
         """
-        Launch the matehmatical analysis on the data which are already saved on our database
+        Launch the mathematical analysis on the data which are already saved on our database
         """
         for m in self.modules:
             if m[0] == 'mathsanalysis':
@@ -81,14 +82,17 @@ class App:
                 except SystemError as error:
                     logging.warning(error[0])
 
+    def run_marks_maker(self, generator):
+        for answer in generator:
+                Mark_maker.Mark_maker(answer)
 
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
-
-            self.run_gatherer()
-
-            self.run_mathsanalysis()
+            gath_gene = self.run_gatherer()
+            math_gene = self.run_mathsanalysis()
+            self.run_marks_maker(gath_gene)
+            self.run_marks_maker(math_gene)
             # Value found in the "system_configuration" table
             time.sleep(float(self.conf['system.sleeptime']))
 
