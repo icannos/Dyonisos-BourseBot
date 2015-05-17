@@ -45,7 +45,7 @@ Temporary Items
 
 
 #Ignore Pycharm files
-/.idea/*
+.idea/*
 .idea/*
 .idea
 **/.idea
