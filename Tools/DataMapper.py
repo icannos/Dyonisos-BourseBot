@@ -5,8 +5,8 @@ import sqlite3 as sq
 
 
 class DataMapper():
-    """Short DataMapper with som function.
-    Called in the rest of Dyonisos BourseBot, it can be changed into a DataMapper made for MySql."""
+    """Short DataMapper with some functions.
+    Called in the rest of Dyonisos BourseBot, it can be turned into a DataMapper made for MySql."""
     database_name, database_path = None, None
     connection, cursor, description, header = None, None, None, None
 

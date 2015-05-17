@@ -8,13 +8,16 @@ sys.setdefaultencoding("utf-8")
 
 class Loader:
 
-    DataM = DM.DataMapper(database_name='database.db', database_path='data')
+    datam = None
+
+    def __init__(self, DataMapper):
+        self.datam = DataMapper
 
     def load_modules(self):
 
         # name = 0, active = 1, block = 2
-        self.DataM.execute('SELECT name, active, block FROM system_modules WHERE active=1')
-        modules = self.DataM.fetchall()
+        self.datam.execute('SELECT name, active, block FROM system_modules WHERE active=1')
+        modules = self.datam.fetchall()
 
         modulesok = []
 
@@ -31,8 +34,8 @@ class Loader:
 
     def load_configuration(self):
         #name = 0, value = 1
-        self.DataM.execute('SELECT name, value FROM system_configuration')
-        conf = self.DataM.fetchall()
+        self.datam.execute('SELECT name, value FROM system_configuration')
+        conf = self.datam.fetchall()
         confok = {}
 
         for c in conf:
@@ -48,8 +51,8 @@ class Loader:
         for l in firms:
             listfirms.append((l['FirmName'], l['FirmISIN'], l['FirmCode']))
 
-        self.DataM.executemany('INSERT INTO system_firms (name, isin, code) VALUES (?, ?, ?)', listfirms)
-        self.DataM.commit_n_close()
+        self.datam.executemany('INSERT INTO system_firms (name, isin, code) VALUES (?, ?, ?)', listfirms)
+        self.datam.commit_n_close()
 
 
 if __name__ == '__main__':
