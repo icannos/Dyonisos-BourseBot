@@ -6,12 +6,12 @@ sys.setdefaultencoding("utf-8")
 
 
 from Tools.loader import Loader
-import logging
 import time
-import Tools.DataMapper as DM
-import Mark_maker
+import Tools.DataMapper as DataM
+import Google_Parse.GoogleParse as Gp
+import Mark_Maker.FirmsMarksWriter as MmF
+import logging
 
-from Google_parse.GoogleParse import GoogleParse
 
 class App:
 
@@ -28,26 +28,19 @@ class App:
 
     def __init__(self):
         logging.info("================= Dyonisos ======================")
-
         logging.info("================= DataMapper ======================")
-        self.DataM = DM.DataMapper(database_name='database.db', database_path='data')
-
+        self.DataM = DataM.DataMapper(database_name='database.db', database_path='data')
         logging.info("================= Initialisation ================")
         loader = Loader(self.DataM)
         logging.info("================= Loading settings ================")
         self.conf = loader.load_configuration()
-
-        logging.info("================= Loading Firms ================")
-        self.google = GoogleParse()
-
+        logging.info("================= Loading GoogleParse ================")
+        self.google = Gp.GoogleParse()
         logging.info("================= Loading Firms ================")
         self.firms = loader.load_firms()
-
         logging.info("================= Loading modules ================")
         self.modules = loader.load_modules()
-
         logging.info("================= Instantiation ================")
-
         for m in self.modules:
             # Get the class object of the module
             mod = getattr(m[2], m[1])
@@ -94,7 +87,7 @@ class App:
                     logging.warning(error[0])
 
     def run_firms_marks_maker(self, g_modules_packages):
-        Mark_maker.Firms_marks_writer(g_modules_packages)
+        MmF.FirmsMarksWriter(g_modules_packages)
 
     def run(self):
         logging.info("================= Lancement =====================")
@@ -105,10 +98,10 @@ class App:
             math_gene = self.run_maths_analysis()
             self.run_firms_marks_maker(gath_gene)
             self.run_firms_marks_maker(math_gene)
-            # Futur place of Module Markupdate
+            # Future place of Module MarkUpdate
 
             # Value found in the "system_configuration" table
-            time.sleep(float(self.conf['system.sleeptime']))
+            time.sleep(10) #float(self.conf['system.sleeptime'])
 
         logging.info("Arret")
         return 0

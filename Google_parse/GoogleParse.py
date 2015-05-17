@@ -1,13 +1,15 @@
 __author__ = 'Atelier'
+#__all__ = ['GoogleParse']
 
-import sys
-reload(sys)
-sys.setdefaultencoding("utf-8")
 import appclass
 import json
 import time
 import urllib2
 import logging
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 
 # This Class is used only to grab financial info from the Google API and store it in the database,
 # there is no reflexion in this class
@@ -27,6 +29,7 @@ class GoogleParse():
             lines = urllib2.urlopen(url).read().decode('ISO-8859-1').splitlines()
             return [firm[1], json.loads(''.join([x for x in lines if x not in ('// [', ']')]))]
         except urllib2.HTTPError as error:
+            print(error)
             logging.warning(firm[0] + ': ' + str(error))
 
 
