@@ -37,7 +37,6 @@ class DataMapper():
 
     def execute(self, order, params={}):
         """
-
         :param order: SQL string with the request to execute
         :param params: Parameters wich are in the SQL String noted ":param", Parameters is a dictonary
         with the relation between parameters and notation in the string: :name / {'name': var}
