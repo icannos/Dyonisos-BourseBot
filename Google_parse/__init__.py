@@ -1,4 +1,4 @@
 __author__ = 'Atelier'
 
 
-__all__ = ['Google_parse']
+__all__ = ['GoogleParse']

@@ -5,13 +5,13 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 
-from loader import Loader
+from Tools.loader import Loader
 import logging
 import time
 import Tools.DataMapper as DM
 import Mark_maker
 
-from Google_parse import Google_parse
+from Google_parse.GoogleParse import GoogleParse
 
 class App:
 
@@ -23,6 +23,7 @@ class App:
     modulesInstances = {}
     on = 1
 
+    google = None
     DataM = None
 
     def __init__(self):
@@ -35,6 +36,9 @@ class App:
         loader = Loader(self.DataM)
         logging.info("================= Loading settings ================")
         self.conf = loader.load_configuration()
+
+        logging.info("================= Loading Firms ================")
+        self.google = GoogleParse()
 
         logging.info("================= Loading Firms ================")
         self.firms = loader.load_firms()
@@ -95,7 +99,7 @@ class App:
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
-            Google_parse.save_firms_data(self.firms)
+            self.google.save_firms_data(self.firms)
 
             gath_gene = self.run_gatherer()
             math_gene = self.run_maths_analysis()
