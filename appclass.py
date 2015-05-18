@@ -6,10 +6,10 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 from Tools.loader import Loader
 import time
-import Tools.DataMapper as DataM
 import Google_Parse.GoogleParse as Gp
 import Mark_Maker.FirmsMarksWriter as MmF
 import logging
+
 
 
 class App():
@@ -103,5 +103,7 @@ class App():
 
             # Value found in the "system_configuration" table
             time.sleep(1) #float(self.conf['system.sleeptime']))
-        logging.info("Arret")
+            logging.info("Again a run")
+
+        logging.info("Exit")
         return 0

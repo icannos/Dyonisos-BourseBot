@@ -41,7 +41,6 @@ class GoogleParse():
         return answer
 
     def write_in_db(self, firm_data):
-        print firm_data
         params = {'isin': firm_data[0], 'quotation':firm_data[1]['l'], 'time': time.time()}
         self.DataM.execute('INSERT INTO system_firms_quotation (isin, quotation, date) '
                               'VALUES (:isin, :quotation, :time)', params)
