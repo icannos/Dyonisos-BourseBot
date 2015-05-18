@@ -85,44 +85,6 @@ def ge_smooth_mov_avg(dates, values, nb_points):
     raise StopIteration
 
 
-def stairs(values, step_size):
-    """
-    List: returns a list made of steps (like stairs).
-    Each step is the average of the precised number of values.
-    The tails is treated anyway, the head is not.
-    """
-    new = []
-    values.reverse()
-    while len(values) >= step_size:
-        step_ori = [values.pop() for i in xrange(step_size)]
-        step_val = avg(step_ori)
-        new += [step_val for i in xrange(step_size)]
-    new += values
-    new.reverse()
-    return new
-
-def ge_diff(X, Y):
-    """
-    Generator: generates a list of absolute difference between items taken out of two lists.
-    """
-    for i in xrange(len(X)):
-        yield abs(X[i]-Y[i])
-    raise StopIteration
-
-def best_stairs(values, max_step_size, min_step_size):
-    """
-    List: returns a stairs list.
-    It has been optimized in order to minimize the maximal difference between the real values and the step ones.
-    It means that the returned is the one for which max( abs(a-b) for (a,b) in (Values * stairs(Values) ) is minimal.
-    """
-    best = None, 1000
-    for i in xrange(min_step_size, max_step_size+1):
-        istairs = stairs(values, i)
-        diff = max(ge_diff(values, istairs))
-        if diff < best[1]:
-            best = istairs, diff
-    return best
-
 def last_upon(dates, values, to_exceed):
     """
     Tuple: returns the last couple (date, value) of the last point of the given list whom value exceeded or is equal to the given one.

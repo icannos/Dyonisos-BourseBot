@@ -1,17 +1,18 @@
 __author__ = 'Maxime'
 
 import logging
-import GlobalFile
+
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
+
 
 
 class AdviceGenericScript:
 
     script_name = None
     version = '1'
-    DataM = None
+
     answer = []
 
     conf = []
@@ -19,7 +20,6 @@ class AdviceGenericScript:
     def __init__(self, conf):
         self.script_name = self.__class__.__name__
         self.set_conf(conf)
-        self.DataM = GlobalFile.get_DataMapper()
 
     def set_conf(self, conf):
         self.conf = conf
