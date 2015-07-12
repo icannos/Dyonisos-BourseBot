@@ -1,6 +1,6 @@
 __author__ = 'Maxime'
 
-from AppClass import App
+from appclass import App
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")

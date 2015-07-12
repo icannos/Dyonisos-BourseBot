@@ -6,8 +6,8 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 from Tools.loader import Loader
 import time
-import Google_Parse.GoogleParse as Gp
-import Mark_Maker.FirmsMarksWriter as MmF
+import Google_parse.GoogleParse as Gp
+import Mark_maker.FirmsMarksWriter as MmF
 import logging
 
 
@@ -102,7 +102,7 @@ class App():
             # Future place of Module MarkUpdate
 
             # Value found in the "system_configuration" table
-            time.sleep(1) #float(self.conf['system.sleeptime']))
+            float(self.conf['system.sleeptime'])
             logging.info("Again a run")
 
         logging.info("Exit")

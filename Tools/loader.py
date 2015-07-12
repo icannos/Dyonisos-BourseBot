@@ -33,12 +33,13 @@ class Loader:
 
     def load_configuration(self):
         #name = 0, value = 1
-        conf = self.datam.get_all('SELECT name, active, block FROM system_modules WHERE active=1')
+        conf = self.datam.get_all('SELECT name, value FROM system_configuration')
         confok = {}
 
         for c in conf:
             confok[c[0]] = c[1]
             logging.info( str(str(c[0]) + ": Charge."))
+
 
         return confok
 
