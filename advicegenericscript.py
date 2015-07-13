@@ -38,7 +38,7 @@ class AdviceGenericScript:
 
     def run(self, firms):
         self.answer = self.build_answer_generator(firms)
-        return self
+        return self.answer
 
     def logexec(self):
         logging.info(self.script_name + ' run.')
