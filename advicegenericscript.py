@@ -6,6 +6,16 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
+class GenericAdvice:
+    date = ''
+    mod_name = ''
+    source = ''
+
+    action = ''
+    firmISIN = ''
+
+    data1 = ''
+    data2 = ''
 
 class AdviceGenericScript:
 
@@ -31,10 +41,6 @@ class AdviceGenericScript:
     def build_answer_generator(self, firms):
         for f in firms:
             yield(self.advice_generator(f))
-
-    def built_answer_generator(self, firms):
-        for firm in firms:
-            yield(self.advice_generator(firm))
 
     def run(self, firms):
         self.answer = self.build_answer_generator(firms)
