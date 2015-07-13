@@ -35,8 +35,6 @@ class App():
         loader = Loader(self.DataM)
         logging.info("================= Loading settings ================")
         self.conf = loader.load_configuration()
-        logging.info("================= Loading GoogleParse ================")
-        self.google = Gp.GoogleParse()
         logging.info("================= Loading Firms ================")
         self.firms = loader.load_firms()
         logging.info("================= Loading modules ================")
@@ -66,9 +64,9 @@ class App():
         Request.getall()
 
         for d, f in zip(Request.data, self.firms):
-            params = {'isin': self.firms[1], 'quotation': d['']}
+            params = {'isin': f[1], 'quotation': d['LastTradePriceOnly'], 'time': time.time()}
             self.DataM.execute('INSERT INTO system_firms_quotation (isin, quotation, date) '
-                              'VALUES (:isin, :quotation, :time)', params)
+                               'VALUES (:isin, :quotation, :time)', params)
 
 
 
@@ -83,8 +81,7 @@ class App():
                 #Reset Conf in doubt of a change
                 instance.setconf(self.conf)
                 try:
-                    instance.run()
-                    yield (instance)
+                    yield(instance.run())
                 except SystemError as error:
                     logging.warning(error[0])
 
@@ -98,8 +95,7 @@ class App():
                 #Reset Conf in doubt of a change
                 instance.setconf(self.conf)
                 try:
-                    instance.run()
-                    yield (instance)
+                    yield(instance.run())
                 except SystemError as error:
                     logging.warning(error[0])
 
@@ -109,7 +105,7 @@ class App():
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
-            self.google.save_firms_data(self.firms)
+            self.get_last_quote_info()
 
             gath_gene = self.run_gatherer()
             math_gene = self.run_maths_analysis()
@@ -118,7 +114,7 @@ class App():
             # Future place of Module MarkUpdate
 
             # Value found in the "system_configuration" table
-            float(self.conf['system.sleeptime'])
+            time.sleep(float(self.conf['system.sleeptime']))
             logging.info("Again a run")
 
         logging.info("Exit")
