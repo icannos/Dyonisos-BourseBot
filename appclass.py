@@ -6,7 +6,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 from Tools.loader import Loader
 import time
-import Google_parse.GoogleParse as Gp
+import YahouAPI.YahouApi as Yp
 import Mark_maker.FirmsMarksWriter as MmF
 import logging
 
@@ -56,6 +56,22 @@ class App():
 
     def stop(self):
         self.on = 0
+
+    def get_last_quote_info(self):
+        codes = []
+        for f in self.firms:
+            codes.append(f[2])
+
+        Request = Yp.RequestQuoteFirms(codes)
+        Request.getall()
+
+        for d, f in zip(Request.data, self.firms):
+            params = {'isin': self.firms[1], 'quotation': d['']}
+            self.DataM.execute('INSERT INTO system_firms_quotation (isin, quotation, date) '
+                              'VALUES (:isin, :quotation, :time)', params)
+
+
+
 
     def run_gatherer(self):
         """

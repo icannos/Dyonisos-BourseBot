@@ -33,7 +33,7 @@ class RequestQuoteFirms(YahouRestApiRequest):
 
         result = urllib2.urlopen(self.encodequery(self.query)).read()
         data = json.loads(result)
-        self.data = data['query']['results']
+        self.data = data['query']['results']['quote']
         return self.data
 
 
