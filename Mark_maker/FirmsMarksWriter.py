@@ -22,7 +22,7 @@ class SingleModule():
     def __init__(self, package=advicegenericscript.GenericAdvice):
         """
         Writes in the database, as soon as defined.
-        Package = (module_name, module_answer) .
+        Package = GenericAnswer
         """
         self.DataM = GlobalFile.get_DataMapper()
         self.module_name = package.mod_name

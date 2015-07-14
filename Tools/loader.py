@@ -46,7 +46,7 @@ class Loader:
 
     def load_firms(self):
         #List of tuple with name = 0, isin=1, code=2
-        self.datam.execute('SELECT name, isin, code FROM system_firms WHERE followed=1 ORDER BY name DESC LIMIT 900')
+        self.datam.execute('SELECT name, isin, code FROM system_firms ORDER BY name DESC LIMIT 900')
         return self.datam.fetchall()
 
 
