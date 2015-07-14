@@ -11,11 +11,15 @@ class GenericAdvice:
     mod_name = ''
     source = ''
 
-    action = ''
+    actionS = ''
+    actionM = ''
+    actionL = ''
+
     firmISIN = ''
 
     data1 = ''
     data2 = ''
+
 
 class AdviceGenericScript:
 
@@ -34,8 +38,8 @@ class AdviceGenericScript:
     def set_conf(self, conf):
         self.conf = conf
 
-
     def advice_generator(self, firm):
+# firm (name = 0, isin=1, code=2)
         raise SystemError('You have to overwrite advicegenerator()')
 
     def build_answer_generator(self, firms):

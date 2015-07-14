@@ -16,6 +16,8 @@ class App():
 
     data = []
     conf = {}
+
+    #List of tuple with name = 0, isin=1, code=2
     firms = []
 
     modules = []
@@ -81,7 +83,7 @@ class App():
                 #Reset Conf in doubt of a change
                 instance.setconf(self.conf)
                 try:
-                    yield(instance.run())
+                    yield(instance.run(self.firms))
                 except SystemError as error:
                     logging.warning(error[0])
 
@@ -95,7 +97,7 @@ class App():
                 #Reset Conf in doubt of a change
                 instance.setconf(self.conf)
                 try:
-                    yield(instance.run())
+                    yield(instance.run(self.firms))
                 except SystemError as error:
                     logging.warning(error[0])
 
