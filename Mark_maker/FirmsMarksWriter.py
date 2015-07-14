@@ -4,6 +4,8 @@ __author__ = 'ValadeAurelien'
 import GlobalFile
 import time
 import sys
+
+import advicegenericscript
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
@@ -17,22 +19,26 @@ class SingleModule():
     module_mark = None
     DataM = None
 
-    def __init__(self, package):
+    def __init__(self, package=advicegenericscript.GenericAdvice):
         """
         Writes in the database, as soon as defined.
         Package = (module_name, module_answer) .
         """
         self.DataM = GlobalFile.get_DataMapper()
-        self.module_name = package[0]
-        self.answer = package[1]
-        self.fetch_module_mark()
-        self.execute_answer()
+        self.module_name = package.mod_name
+
+        if package.actionS == 0 && package.actionL == 0 && package.actionM == 0:
+            return 0
+        else:
+            self.answer = (package.actionS, package.actionM, package.actionL)
+            self.fetch_module_mark()
+            self.execute_answer()
 
     def fetch_module_mark(self):
         """
         Fetches the marks of the considered module in system_modules_marks.database.db .
         """
-        self.module_mark = self.DataM.get_all("SELECT markS,markM,markL FROM system_modules_marks WHERE name='" + self.module_name + "'")
+        self.module_mark = self.DataM.get_all("SELECT markS,markM,markL FROM system_modules_marks WHERE name='" + self.module_name + "' ORDER BY date DESC LIMIT 1")
         self.module_mark = self.module_mark[0]
 
 
@@ -92,8 +98,10 @@ class FirmsMarksWriter():
         package = [(mod_name,mod.answer)...]
         mod.answer = [advice...]
         advice = [firm_isin, integer]
+        :param g_modules_packages: advicegenericscript.GenericAdvice
         """
         self.DataM = GlobalFile.get_DataMapper()
+        #g_modules_packages = list of GenericAdvice Object
         self.g_modules_packages = g_modules_packages
         self.execute_answers()
         self.DataM.commit()
@@ -103,6 +111,6 @@ class FirmsMarksWriter():
         Calls an object that makes the execution for each module.
         """
         for answer in self.g_modules_packages:
-            answer[0].encode('utf-8')
+            answer.mod_name.encode('utf-8')
             SingleModule(answer)
 
