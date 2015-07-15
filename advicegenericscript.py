@@ -11,9 +11,7 @@ class GenericAdvice:
     mod_name = ''
     source = ''
 
-    actionS = ''
-    actionM = ''
-    actionL = ''
+    action = ''
 
     firmISIN = ''
 
