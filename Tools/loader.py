@@ -23,10 +23,10 @@ class Loader:
         for m in modules:
             try:
                 modulesok.append([str(m[2]), str(m[0]), __import__(m[2] + "." + m[0], globals(), locals(), [m[0]], -1)])
-                logging.info( str(m[2]) + "." + str(m[0]) + ": Charge.")
+                logging.info(str(m[2]) + "." + str(m[0]) + ": Charge.")
 
             except ImportError:
-                logging.warning( str(m[2]) + "." + str(m[0]) + ": Echec.")
+                logging.warning(str(m[2]) + "." + str(m[0]) + ": Echec.")
 
         return modulesok
 

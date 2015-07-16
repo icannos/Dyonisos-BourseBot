@@ -43,6 +43,7 @@ class UpdateAdvice():
         """
         Modifies the datas of the firm in order to create a new line in the DB.
         """
+
         actionS = self.module_mark[0]/100 * self.advice.action
         actionM = self.module_mark[1]/100 * self.advice.action
         actionL = self.module_mark[2]/100 * self.advice.action
@@ -78,10 +79,12 @@ class FirmsMarksWriter():
         self.DataM = GlobalFile.get_DataMapper()
         self.g_modules_packages = g_modules_packages
         self.execute_answers()
+        print [item for item in g_modules_packages]
         self.DataM.commit()
+        print 'coucou2'
 
     def g_unpack(self):
-        for mod in self.g_modules_packages():
+        for mod in self.g_modules_packages:
             for advice in mod :
                 yield advice
         raise (StopIteration)
@@ -96,5 +99,4 @@ class FirmsMarksWriter():
         """
         Calls an object that makes the execution for each module.
         """
-        self.DataM.executemany('INSERT INTO sys_firms_marks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', self.g_new_f_infos())
-
+        self.DataM.executemany('INSERT INTO system_firms_marks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', self.g_new_f_infos())

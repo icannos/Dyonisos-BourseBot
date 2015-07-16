@@ -4,6 +4,8 @@ import GlobalFile
 import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
+
+import advicegenericscript
 from Tools.loader import Loader
 import time
 import YahouAPI.YahouApi as Yp
@@ -113,16 +115,16 @@ class App():
 
             gath_gene = self.run_gatherer()
             math_gene = self.run_maths_analysis()
-            self.run_firms_marks_maker(gath_gene)
-            self.run_firms_marks_maker(math_gene)
+            MmF.FirmsMarksWriter(gath_gene)
+            MmF.FirmsMarksWriter(math_gene)
             # Future place of Module MarkUpdate
 
 
             end = time.time()
 
             # Assure the system that the time between 2 iteration is really egal to system.sleeptime including execution
-            if (self.conf["system.sleeptime"] - (end - begin)) > 0:
-                time.sleep(float(self.conf["system.sleeptime"] - (end - begin)))
+            if (float(self.conf["system.sleeptime"]) - (end - begin)) > 0:
+                time.sleep(float(float(self.conf["system.sleeptime"]) - (end - begin)))
 
             logging.info("Again a run")
 

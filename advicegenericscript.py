@@ -27,10 +27,10 @@ class AdviceGenericScript:
 
     def __init__(self, conf):
         self.script_name = self.__class__.__name__
-        self.set_conf(conf)
+        self.setconf(conf)
         self.DataM = GlobalFile.get_DataMapper()
 
-    def set_conf(self, conf):
+    def setconf(self, conf):
         self.conf = conf
 
     def advice_generator(self, firm):
