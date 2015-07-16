@@ -107,6 +107,8 @@ class App():
     def run(self):
         logging.info("================= Lancement =====================")
         while self.on:
+            begin = time.time()
+
             self.get_last_quote_info()
 
             gath_gene = self.run_gatherer()
@@ -115,8 +117,13 @@ class App():
             self.run_firms_marks_maker(math_gene)
             # Future place of Module MarkUpdate
 
-            # Value found in the "system_configuration" table
-            time.sleep(float(self.conf['system.sleeptime']))
+
+            end = time.time()
+
+            # Assure the system that the time between 2 iteration is really egal to system.sleeptime including execution
+            if (self.conf["system.sleeptime"] - (end - begin)) > 0:
+                time.sleep(float(self.conf["system.sleeptime"] - (end - begin)))
+
             logging.info("Again a run")
 
         logging.info("Exit")
