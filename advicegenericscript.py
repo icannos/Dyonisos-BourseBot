@@ -6,17 +6,13 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
-class GenericAdvice:
-    date = ''
-    mod_name = ''
-    source = ''
 
-    action = ''
 
-    firmISIN = ''
-
-    data1 = ''
-    data2 = ''
+class advice:
+    mod_name = None
+    action = 0 #Must Take 0,1 or -1
+    date = None
+    Source = None #Used by the module to save some info
 
 
 class AdviceGenericScript:
