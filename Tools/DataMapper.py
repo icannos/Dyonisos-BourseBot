@@ -6,6 +6,7 @@ import sys
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
+
 class DataMapper():
     """Short DataMapper with some functions.
     Called in the rest of Dyonisos BourseBot, it can be turned into a DataMapper made for MySql."""
@@ -105,7 +106,11 @@ class DataMapper():
         self.execute(order)
         return self.fetchall()
 
+    def get_one(self, order):
+        """List of tuples?: returns the first of a list-object created by a selection order."""
+        self.execute(order)
+        return self.fetchone()
+
     def open_database_dir(self):
         """Void: opens the database folder."""
         os.startfile(self.database_path)
-

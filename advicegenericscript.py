@@ -8,10 +8,11 @@ sys.setdefaultencoding("utf-8")
 
 
 
-class advice:
-    mod_name = None
+class Advice:
+    module_name = None
     action = 0 #Must Take 0,1 or -1
     date = None
+    firm_isin = None
     Source = None #Used by the module to save some info
 
 
