@@ -9,7 +9,6 @@ class InfoScript(AdviceGenericScript):
     version = '1'
 
     def advice_generator(self, firm):
-        print "InfoScript"
         answer = Advice
         answer.action = 1
         answer.firm_isin = "FR0000076887"
