@@ -8,7 +8,7 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 
-class UpdateAdvice():
+class ExecuteAdvice():
     """
      Writes new lines in system_firms_marks.database.db .
     It considers a single piece of advice and modified by rewritting the infos about the firm concerned by this piece of advice
@@ -25,7 +25,6 @@ class UpdateAdvice():
         """
         self.DataM = GlobalFile.get_DataMapper()
         self.advice = advice
-        self.execute_advice()
 
     def fetch_module_mark(self):
         """
@@ -62,6 +61,7 @@ class UpdateAdvice():
         self.firm_infos[7] = actionL
         self.firm_infos[8] = self.advice.module_name.encode('utf-8')
         self.firm_infos[9] = time.time()
+        return self.firm_infos
 
 
 class FirmsMarksWriter():
@@ -91,13 +91,12 @@ class FirmsMarksWriter():
 
     def g_new_f_infos(self):
         for advice in self.g_unpack():
-            update = UpdateAdvice(advice)
-            yield update.firm_infos
+            update = ExecuteAdvice(advice)
+            yield update.execute_advice()
         raise (StopIteration)
 
     def execute_answers(self):
         """
         Calls an object that makes the execution for each module.
         """
-        list = [item for item in self.g_new_f_infos()]
-        self.DataM.executemany('INSERT INTO system_firms_marks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', list)
+        self.DataM.executemany('INSERT INTO system_firms_marks VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [item for item in self.g_new_f_infos()])

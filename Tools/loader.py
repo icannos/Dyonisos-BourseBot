@@ -1,7 +1,8 @@
 
+import GlobalFile
 import logging
 import sys
-import Tools.DataMapper as DM
+
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
@@ -10,8 +11,8 @@ class Loader:
 
     datam = None
 
-    def __init__(self, DataMapper):
-        self.datam = DataMapper
+    def __init__(self):
+        self.datam = GlobalFile.get_DataMapper()
 
     def load_modules(self):
 

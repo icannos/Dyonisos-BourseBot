@@ -7,34 +7,36 @@ reload(sys)
 sys.setdefaultencoding("utf-8")
 
 
+
 class DataMapper():
     """Short DataMapper with some functions.
     Called in the rest of Dyonisos BourseBot, it can be turned into a DataMapper made for MySql."""
     database_name, database_path = None, None
-    connection, cursor, description, header = None, None, None, None
+    connexion, cursor, description, header = None, None, None, None
+    tables = None
 
     def __init__(self, database_name, database_path):
-        """Void: initialization of the connection, which is established here."""
+        """Void: initialization of the connexion, which is established here."""
         self.database_name = database_name
         self.database_path = database_path
-        self.establish_connection()
+        self.establish_connexion()
 
     def commit_n_close(self):
-        """Void: commits then closes the connection."""
+        """Void: commits then closes the connexion."""
         self.commit()
-        self.connection.close()
+        self.connexion.close()
 
-    def establish_connection(self):
-        """Void: establishes the connection to given database."""
+    def establish_connexion(self):
+        """Void: establishes the connexion to given database."""
         try:
-            self.connection = sq.connect(self.database_path + r'\\ '[0] + self.database_name)
-            self.cursor = self.connection.cursor()
+            self.connexion = sq.connect(self.database_path + r'\\ '[0] + self.database_name)
+            self.cursor = self.connexion.cursor()
         except sq.Error as error:
             raise SystemError('SQLite error: ' + error[0])
 
     def commit(self):
         """Void: commits."""
-        self.connection.commit()
+        self.connexion.commit()
 
     def execute(self, order, params={}):
         """
@@ -114,3 +116,18 @@ class DataMapper():
     def open_database_dir(self):
         """Void: opens the database folder."""
         os.startfile(self.database_path)
+
+    def fetch_tables(self):
+        """
+        Fetches the list of the tables in the DB. Returns nothing. See get_tables().
+        """
+        self.tables = self.get_all("SELECT * FROM dbname.sqlite_master WHERE type='table'")
+
+    def get_tables(self):
+        """
+        Returns the tables names of the DB.
+        """
+        if not self.tables:
+            self.fetch_tables()
+        return self.tables
+
