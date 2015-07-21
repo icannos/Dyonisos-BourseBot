@@ -139,7 +139,6 @@ class UpdateModules:
 
     short, middle, long = None, None, None
 
-    def __init__(self, ):
-        config = GlobalFile.get_config()
+    def __init__(self, config):
         self.short, self.middle, self.long = int(config['system.short_range']), int(config['system.middle_range']), int(config['system.long_range'])
 

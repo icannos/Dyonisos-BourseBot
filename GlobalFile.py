@@ -16,6 +16,9 @@ def init_Logging():
     logging.basicConfig(filename='Data/dyonisos.log', format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p', filemode='a', level=logging.DEBUG)
 
 ################################## LOADER ##################################
+
+
+#### Depracted
 def init_Loader():
     global Loader
     Loader = Tools.loader.Loader()
