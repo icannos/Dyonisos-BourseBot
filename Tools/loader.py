@@ -11,8 +11,8 @@ class Loader:
 
     datam = None
 
-    def __init__(self):
-        self.datam = GlobalFile.get_DataMapper()
+    def __init__(self, DataM):
+        self.datam = DataM
 
     def load_modules(self):
 

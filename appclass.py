@@ -9,7 +9,7 @@ import advicegenericscript
 from Tools.loader import Loader
 import time
 import YahouAPI.YahouApi as Yp
-import Mark_Maker.FirmsMarksWriter as MmF
+import Mark_maker.FirmsMarksWriter as MmF
 import logging
 
 
